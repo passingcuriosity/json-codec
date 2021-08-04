@@ -18,7 +18,7 @@ There are _n_ goals:
 Examples
 --------
 
-```
+```python
 import json
 
 from dataclasses import dataclass, field
@@ -31,7 +31,10 @@ from json_codec import codec, default
 class Example:
   name: str
   age: int = field(default=99)
-  created: datetime = field(default_factory=datetime.utcnow, metadata=codec.datetime(format="XXX%Y-%m-%dYYY%H:%M:%S.%fZZZ"))
+  created: datetime = field(
+    default_factory=datetime.utcnow,
+    metadata=codec.datetime(format="XXX%Y-%m-%dYYY%H:%M:%S.%fZZZ")
+  )
   
 obj1 = Example.from_json({'name': "thsutton"})
 
