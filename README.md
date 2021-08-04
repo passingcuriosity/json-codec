@@ -18,7 +18,7 @@ There are _n_ goals:
 Examples
 --------
 
-```
+```{.python}
 import json
 
 from dataclasses import dataclass, field
